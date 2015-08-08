@@ -1,20 +1,24 @@
-var originalText = "By a former marriage, Mr. Henry Dashwood had one son: by his present lady, three daughters. The son, a steady respectable young man, was amply provided for by the fortune of his mother, which had been large, and half of which devolved on him on his coming of age. By his own marriage, likewise, which happened soon afterwards, he added to his wealth. To him therefore the succession to the Norland estate was not so really important as to his sisters; for their fortune, independent of what might arise to them from their father's inheriting that property, could be but small. Their mother had nothing, and their father only seven thousand pounds in his own disposal; for the remaining moiety of his first wife's fortune was also secured to her child, and he had only a life-interest in it.";
+var originalText = "These past few months especially have reminded me that I have the most amazing friends anyone could ever ask for. Those of you in Korea, you know who you are, thank you! I wouldn't have survived these past 7 years without you. You have poured onto me an abundance of love, patience, and understanding. You made Korea a home for me, and I am eternally grateful to you. You all have a special place in my heart. This is not goodbye- just see you later."
 var net = [];
 var allWords = [];
 var theVeryWords = [];
 
-var spliting = function(originalText) {
-	allWords = text.split(" ");
+var grabbing = function(originalText) {
+	allWords = originalText.trim().split(" ");
 	console.log(allWords);
 }
 
 var neting = function(allWords) {
-	
+	net = ["especially", "amazing", "thank", "Korea", "love", "patience", "understanding", "grateful", "special", "home", "happy"]
+	for (var i = 0 ; i < net.length ; i++) {
+		for (var j = 0 ; j < allWords.length ; j++) {
+			if (net[i] === allWords[j]) {
+				theVeryWords.push(allWords[j]);
+			}
+		}
+	}
+	console.log(theVeryWords)
 }
 
 grabbing(originalText);
-
-
-
-
-
+neting(allWords);
